@@ -1,4 +1,4 @@
-import React, { useEffect, ReactNode } from "react";
+import { useEffect, useRef, ReactNode } from "react";
 
 interface IObserverProps {
   children: ReactNode;
@@ -14,7 +14,7 @@ interface IOptions {
 // Опишіть Props
 export function Observer({ children, onContentEndVisible }: IObserverProps) {
   // Вкажіть правильний тип для useRef зверніть увагу, в який DOM елемент ми його передаємо
-  const endContentRef = React.useRef(null);
+  const endContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Вкажіть правильний тип для options, підказка, клас також можна вказувати як тип
